@@ -95,8 +95,36 @@ var t5 = performance.now();
 console.log("Time run: " + (t5 - t4) + " milliseconds.");
 document.write("Thời gian sắp xếp chèn: " + (t5 - t4) + " milliseconds.<br>");
 
-//------------------------------- Sap xep tron ----------------------------------------------------
+//--------------------------- 4 - Sap xep tron ----------------------------------------------------
 
+function mergeSort(array) {
+    if (array.length > 1) {
+        const { length } = array;
+        const middle = Math.floor(length / 2);
+        const left = mergeSort(array.slice(0, middle));
+        const right = mergeSort(array.slice(middle, length));
+        array = merge(left, right);
+    }
+    return array;
+
+ console.log(array);
+  selectsort.innerHTML = array;
+}
+var t6 = performance.now();
+mergeSort(arr);
+var t7 = performance.now();
+console.log("Time run: " + (t7 - t6) + " milliseconds.");
+document.write("Thời gian sắp xếp trộn: " + (t7 - t6) + " milliseconds.<br>");
+
+function merge(left, right) {
+    let i = 0;
+    let j = 0;
+    const result = [];
+    while (i < left.length && j < right.length) {
+        result.push(compare(left[i], right[j]) === Compare.LESS_THAN ? left[i++] : right[j++]);
+    }
+    return result.concat(i < left.length ? left.slice(i) : right.slice(j));
+}
 
 //-------------------------- Reload page ----------------------------------------------------------
 function reloadPage(){
