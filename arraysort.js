@@ -96,7 +96,7 @@ console.log("Time run: " + (t5 - t4) + " milliseconds.");
 document.write("Thời gian sắp xếp chèn: " + (t5 - t4) + " milliseconds.<br>");
 
 //--------------------------- 4 - Sap xep tron ----------------------------------------------------
-
+/*
 function mergeSort(array) {
     if (array.length > 1) {
         const { length } = array;
@@ -124,7 +124,7 @@ function merge(left, right) {
         result.push(compare(left[i], right[j]) === Compare.LESS_THAN ? left[i++] : right[j++]);
     }
     return result.concat(i < left.length ? left.slice(i) : right.slice(j));
-}
+}*/
 
 //-------------------------- Reload page ----------------------------------------------------------
 function reloadPage(){
